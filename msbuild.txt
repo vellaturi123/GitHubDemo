@@ -18,3 +18,22 @@ a.	<!—Write a build statement which will copy all the output files to a new fo
     <ItemGroup>
       <_CustomFilesToDelete Include="$(_OutputCopyLocation)**\*"/>
     </ItemGroup>
+
+
+
+
+
+-- Create a new table called '[employee]' in schema '[dbo]'
+-- Drop the table if it already exists
+IF OBJECT_ID('[dbo].[employee]', 'U') IS NOT NULL
+DROP TABLE [dbo].[employee]
+GO
+-- Create the table in the specified schema
+CREATE TABLE [dbo].[employee]
+(
+    [empId] INT NOT NULL PRIMARY KEY, -- Primary Key column
+    [empname] NVARCHAR(50) NOT NULL,
+    [location] NVARCHAR(50) NOT NULL
+    -- Specify more columns here
+);
+GO
